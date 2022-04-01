@@ -1902,6 +1902,11 @@ jQuery(document).ready(function ($) {
             return false;
         }
 
+        // On change variants 
+        $("form[action='/cart/add'] .material__swatches li").on("click", function(){
+            __findFormidProductPage();
+        });
+        
         $(document).ajaxComplete(function (event, xhr, settings) {
             if (settings.url == "https://delest-api.fenixcommerce.com/fenixdelest/api/v2/deliveryestimates") {
                 if (xhr.responseJSON != undefined &&
